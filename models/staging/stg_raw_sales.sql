@@ -1,8 +1,8 @@
-with 
+{{ config(materialized='view') }}
 
-source as (
+with source as (
 
-    select * from {{ source('raw', 'sales') }}
+    select * from {{ source('gz_raw_data', 'raw_gz_sales') }}
 
 ),
 
